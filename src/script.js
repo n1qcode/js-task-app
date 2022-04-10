@@ -133,7 +133,7 @@ loginBtn.forEach(e => {
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    if (validationInpDataEmpty() && validationPassword()) {
+    if (validationInpLoginEmpty() & validationInpPasswordEmpty()) {
         errorMesOff();
         loginFunc();
     }
@@ -142,18 +142,24 @@ submit.addEventListener('click', (e) => {
 
 // валидация логина и пароля
 // на пустоту
-function validationInpDataEmpty() {
+function validationInpLoginEmpty() {
     if (!inpLogin.value) {
-        errorMesLoginEmpty.innerHTML = 'Пожалуйста введите имя пользователя!'
+        errorMesLoginEmpty.innerHTML = 'Пожалуйста введите имя пользователя!';
     } else {
-        errorMesLoginEmpty.innerHTML = ''
-        if (!inpPassword.value) {
-            errorMesPasswordEmpty.innerHTML = 'Пожалуйста введите пароль!'
-        } else {
-            errorMesPasswordEmpty.innerHTML = ''
-            return true;
-        }
+        errorMesLoginEmpty.innerHTML = '';
+        return true;
     }
+}
+
+function validationInpPasswordEmpty() {
+        if (!inpPassword.value) {
+            errorMesPasswordEmpty.innerHTML = 'Пожалуйста введите пароль!';
+        } else {
+            errorMesPasswordEmpty.innerHTML = '';
+            if (validationPassword()) {
+                return true
+            }
+        }
 }
 
 // валидация пароля
@@ -161,7 +167,7 @@ function validationPassword() {
     if (inpPassword.value.length >= 8) {
         return true;
     } else {
-        errorMesPasswordEmpty.innerHTML = 'Пароль должен быть не менее 8 символов!'
+        errorMesPasswordEmpty.innerHTML = 'Пароль должен быть не менее 8 символов!';
     }
 }
 
