@@ -91,8 +91,10 @@
             <h2 class="login-header">Вход</h2>
             <form class="login-container">
                 <div class="login_error"></div>
-                <p><input class="input_login" type="text" name="username" placeholder="Логин"></p>
-                <p><input class="input_password" type="password" name="password" placeholder="Пароль"></p>
+                <p><input required="required" class="input_login" type="text" name="username" placeholder="Логин"></p>
+                <div class="login_error-empty"></div>
+                <p><input required="required" min="8" class="input_password" type="password" name="password" placeholder="Пароль"></p>
+                <div class="password_error-empty"></div>
                 <div class="login_section">
                     <div class="loader_place"></div>
                     <button class="submit">Войти</button>

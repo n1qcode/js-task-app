@@ -17,6 +17,17 @@ body {
     display: flex;
 }
 
+.login_error-empty {
+    color: red;
+    margin-left: 20px;
+}
+
+.password_error-empty {
+    color: red;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
 /* loader */
 .loader{
     width: 20px;

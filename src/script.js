@@ -19,6 +19,8 @@ const inpPassword = document.querySelector('.input_password');
 
 const loader = document.querySelector('.loader_place');
 const errorMes = document.querySelector('.login_error');
+const errorMesLoginEmpty = document.querySelector('.login_error-empty');
+const errorMesPasswordEmpty = document.querySelector('.password_error-empty');
 
 let loginVal;
 let passwordVal;
@@ -124,16 +126,45 @@ backToMainBtn.addEventListener('click', () => {
 
 // вход
 loginBtn.forEach(e => {
-    e.addEventListener('click', (e) => {
+    e.addEventListener('click', () => {
         modalLoginOpen();
     });
 });
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    errorMesOff();
-    loginFunc();
+    if (validationInpDataEmpty() && validationPassword()) {
+        errorMesOff();
+        loginFunc();
+    }
 });
+
+
+// валидация логина и пароля
+// на пустоту
+function validationInpDataEmpty() {
+    if (!inpLogin.value) {
+        errorMesLoginEmpty.innerHTML = 'Пожалуйста введите имя пользователя!'
+    } else {
+        errorMesLoginEmpty.innerHTML = ''
+        if (!inpPassword.value) {
+            errorMesPasswordEmpty.innerHTML = 'Пожалуйста введите пароль!'
+        } else {
+            errorMesPasswordEmpty.innerHTML = ''
+            return true;
+        }
+    }
+}
+
+// валидация пароля
+function validationPassword() {
+    if (inpPassword.value.length >= 8) {
+        return true;
+    } else {
+        errorMesPasswordEmpty.innerHTML = 'Пароль должен быть не менее 8 символов!'
+    }
+}
+
 
 // добавляем/удаляем индикатор загрузки
 function loaderOn() {
@@ -156,7 +187,7 @@ function errorMesOff() {
 }
 
 
-// ассинхронные запросы
+// ассинхронные запросы к бд
 function loginFunc() {
     try {
         loaderOn();
