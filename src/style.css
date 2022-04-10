@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@600&display=swap');
+
+body {
+    margin: 0;
+    background: #FFFFFF;
+}
+
+.on {
+    display: block;
+}
+
+.off {
+    display: none !important;
+}
+
+.login_section {
+    display: flex;
+}
+
+/* loader */
+.loader{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: relative;
+    margin-left: 35px;
+    margin-top: 15px;
+}
+
+#loader-1:before, #loader-1:after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 10px solid transparent;
+    border-top-color: #3498db;
+}
+
+#loader-1:before{
+    z-index: 100;
+    animation: spin 1s infinite;
+}
+
+#loader-1:after{
+    border: 10px solid #ccc;
+}
+
+@keyframes spin{
+    0%{
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100%{
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/* loader */
+
+/* modal */
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+
+.login-header,
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #28d;
+}
+
+.login-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.login-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+.login p {
+    padding: 12px;
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: #888;
+}
+
+.loader_place {
+    width: 80px;
+}
+
+.login_error {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 17px;
+    width: 175px;
+    margin-left: 20px;
+}
+
+.submit:hover {
+    background: #17c;
+}
+
+.submit:focus {
+    border-color: #05a;
+}
+/* modal */
+
+.back {
+    background: rgba(0,0, 0, .5);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 62px;
+    margin-top: 18px;
+    border-bottom: 1px solid #000000;
+}
+
+.logo_header {
+    margin-top: 13px;
+    margin-left: 53px;
+    width: 53px;
+    height: 23px;
+}
+
+.main {
+    margin-top: 96px;
+    margin-left: 197px;
+}
+
+.main_contacts {
+    margin-top: 184px;
+    margin-left: 197px;
+}
+
+.main_on {
+    margin-top: 141px;
+    margin-left: 197px;
+}
+
+.main h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    width: 727px;
+    height: 160px;
+}
+
+.main_contacts h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    width: 727px;
+    height: 160px;
+}
+
+.main_on h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    width: 727px;
+    height: 71px;
+}
+
+.main_buttons {
+    display: flex;
+}
+
+.main_btn_login {
+    border: none;
+    background: #FF685B;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 52px;
+    width: 128px;
+    cursor: pointer;
+}
+
+.main_btn_login_on {
+    border: none;
+    background: #FF685B;
+    border-radius: 5px;
+    margin-right: 10px;
+    height: 52px;
+    width: 239px;
+    cursor: pointer;
+}
+
+.main_btn_login_name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.main_btn_contacts {
+    height: 52px;
+    width: 155px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    border: 1px solid #FF685B;
+    cursor: pointer;
+}
+
+.main_btn_contacts_on {
+    height: 52px;
+    width: 228px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    border: 1px solid #FF685B;
+    cursor: pointer;
+}
+
+.main_btn_contacts_name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FF685B;
+    margin: 0;
+}
+
+.main_cards {
+    display: flex;
+    margin-top: 96px;
+
+}
+
+.main_cards_elem {
+    width: 328px;
+    height: 248px;
+    background: #FFFFFF;
+    box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+    margin-right: 30px;
+}
+
+.main_cards_elem-data {
+    margin-top: 35px;
+    margin-left: 40px;
+}
+
+.main_cards_name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+    margin: 20px 0;
+}
+
+.main_cards_hr {
+    width: 50px;
+    height: 2px;
+    background: #E74040;
+    margin: 20px 0;
+    border: none;
+}
+
+.main_cards_text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+    margin: 20px 0;
+}
+
+.header_buttons {
+    display: flex;
+    margin-right: 70px;
+}
+
+.header_buttons_login {
+    display: flex;
+    align-items: center;
+    padding: 8px 60px;
+    width: 186px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #FF685B;
+    box-sizing: border-box;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.header_buttons_logout {
+    display: flex;
+    align-items: center;
+    padding: 8px 60px;
+    width: 186px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #FF685B;
+    box-sizing: border-box;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.header_buttons_contacts {
+    cursor: pointer;
+    border: none;
+    margin-right: 49px;
+    height: 40px;
+    width: 95px;
+    background: none;
+}
+
+.header_btn_login_name {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF685B;
+    margin: 0;
+}
+
+.header_btn_contacts_name {
+    font-family: Open Sans, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #737373;
+    margin: 0;
+}
+
+.modal_form_login {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+.modal_form_login-body {
+    width: 450px;
+}
+
+.login_form_close_btn {
+    margin-left: 381px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.order_online {
+    order: 0;
+}
+
+.order_emergency {
+    order: 1;
+}
+
+.order_cancer {
+    order: 2;
+}
+
+@media (max-width: 375px) {
+
+    .logo_header {
+        margin-left: 10px;
+    }
+
+    .header_buttons_contacts {
+        margin-right: 10px;
+    }
+
+    .header_buttons_login {
+        width: 106px;
+        height: 36px;
+        padding: 6px 20px;
+    }
+
+    .header_buttons {
+        margin-right: 10px;
+    }
+
+    .main {
+        margin-left: 10px;
+        margin-top: 55px;
+    }
+
+    .main_on {
+        margin-left: 10px;
+        margin-top: 55px;
+    }
+
+    .main_contacts {
+        margin-left: 10px;
+        margin-top: 55px;
+    }
+
+    .main h1 {
+        font-size: 28px;
+        line-height: 39px;
+        width: 355px;
+        height: 89px;
+        margin-bottom: 35px;
+    }
+
+    .main_on h1 {
+        font-size: 28px;
+        line-height: 39px;
+        width: 355px;
+        height: 89px;
+    }
+
+    .main_contacts h1 {
+        font-size: 28px;
+        line-height: 39px;
+        width: 355px;
+        height: 89px;
+    }
+
+    .main_cards {
+        margin-top: 29px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_cards_elem {
+        margin-left: 24px;
+        margin-bottom: 30px;
+    }
+
+    .main_cards_elem-data {
+        margin-top: 35px;
+        margin-left: 34px;
+    }
+
+    .order_online {
+        order: 1;
+    }
+
+    .order_emergency {
+        order: 2;
+    }
+
+    .order_cancer {
+        order: 0;
+    }
+
+    .main_cards_text {
+        margin-bottom: 35px;
+    }
+
+    .modal_form_login-body {
+        width: 335px;
+    }
+
+    .main_buttons_login {
+        display: block;
+    }
+
+    .main_btn_login_on_mob {
+        margin-bottom: 20px;
+    }
+
+    .login {
+        width: 330px;
+    }
+
+    .submit {
+        margin-left: 67px;
+    }
+
+}
